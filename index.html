@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Model Toyota Corolla</h1>
+        <div class="header">
+            <img src="img/black.jpg" alt="" class="head-img">
+            <div class="model-summary">
+                <h2 class="model-name">Toyota Corolla</h2>
+                <div class="model-specs"></div>
+                <p class="model-price"></p>
+                <button class="btn">Замовити</button>
+            </div>
+        </div>
+        <form class="auto-form">
+            <h3>Характеристики</h3>
+            <div class="auto-specs">
+                <div class="item">
+                    <h4>Двигун</h4>
+                    <div class="form-block">
+                        <input type="radio" name="engine" id="engine1400" value="56200" checked>
+                        <label for="engine1400">1.4 л</label>
+                    </div>
+                    <div class="form-block">
+                        <input type="radio" name="engine" id="engine1600" value="62200">
+                        <label for="engine1600">1.6 л</label>
+                    </div>
+                    <div class="form-block">
+                        <input type="radio" name="engine" id="engine2000" value="78300">
+                        <label for="engine2000">2.0 л</label>
+                    </div>
+                </div>
+                <div class="item">
+                    <h4>Пакет</h4>
+                    <div class="form-block">                       
+                        <input type="radio" name="package" id="packageActive" value="0" checked>
+                        <label for="packageActive">Active</label>
+                    </div>
+                    <div class="form-block">                       
+                        <input type="radio" name="package" id="packageActivePlus" value="24560">
+                        <label for="packageActivePlus">Active Plus</label>
+                    </div>
+                </div>
+                <div class="item">
+                    <h4>Коробка передач</h4>
+                    <div class="form-block">
+                        <input type="radio" name="transmision" id="auto" value="23000" checked>
+                        <label for="auto">Автомат</label>
+                    </div>
+                    <div class="form-block">
+                        <input type="radio" name="transmision" id="manual" value="12000">
+                        <label for="manual">Ручна</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <h4>Вибір кольору</h4>
+        <div class="color-selector">
+            <div class="color-item colorWhite" data-img-path="img/white.jpg"></div>
+            <div class="color-item colorBlack" data-img-path="img/black.jpg"></div>
+            <div class="color-item colorBronz" data-img-path="img/bronz.jpg"></div>
+            <div class="color-item colorSilver" data-img-path="img/silver.jpg"></div>
+            <div class="color-item colorGray" data-img-path="img/gray.jpg"></div>
+            <div class="color-item colorRed" data-img-path="img/red.png"></div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+</html>
