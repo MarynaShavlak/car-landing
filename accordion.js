@@ -4,8 +4,7 @@ import { createTable } from './contentTable.js';
 
 function createAccordionItem(data) {
   const { title, content } = data;
-  const table = createTable();
-  console.log('table : ', table );
+  const table = createTable(content);
   const accordionItem = $(
     '<div class="accordion">' +
       '<div class="accordion-title">' +
