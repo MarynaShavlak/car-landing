@@ -1,31 +1,45 @@
 import { populateAccordion, handleAccordionClick } from './accordion.js';
 
-
-
 $(document).ready(function () {
+  const modelSpecsText = $('.model-specs');
+  const modelPriceText = $('.model-price');
+  let modelSpecs = '';
+  let modelPrice = 0;
+  initAccordion();
+  initColorSelection();
+  initModel();
+
+  function initAccordion() {
     populateAccordion('.accordion__container');
     $('.accordion-title').click(function () {
-        handleAccordionClick($(this));
-      });
+      handleAccordionClick($(this));
+    });
+  }
 
+  function initModel() {
+    calculatePrice();
+    compileSpecs();
 
-  $('.color-selector .color-item').on('click', function () {
-    let imgPath = $(this).attr('data-img-path');
+    $('.auto-form input').on('change', function () {
+      initModelDetails();
+    });
+  }
+
+  function initModelDetails() {
+    calculatePrice();
+    compileSpecs();
+  }
+
+  function handleColorSelection(selectedColor) {
+    const imgPath = selectedColor.attr('data-img-path');
     $('.head-img').attr('src', imgPath);
-  });
+  }
 
-  let modelSpecs;
-  let modelPrice;
-  let modelSpecsText;
-  let modelPriceText;
-
-  modelSpecsText = $('.model-specs');
-  modelPriceText = $('.model-price');
-
-  modelSpecs = '';
-  modelPrice = 0;
-  calculatePrice();
-  compileSpecs();
+  function initColorSelection() {
+    $('.color-selector .color-item').on('click', function () {
+      handleColorSelection($(this));
+    });
+  }
 
   function calculatePrice() {
     let modelPriceEngine = $('input[name=engine]:checked', '.auto-form').val();
@@ -52,12 +66,4 @@ $(document).ready(function () {
       ', ' + $('input[name=transmision]:checked + label', '.auto-form').text();
     modelSpecsText.text(modelSpecs);
   }
-
-  $('.auto-form input').on('change', function () {
-    calculatePrice();
-    compileSpecs();
-  });
-
-
-  
 });

@@ -36,7 +36,7 @@ export const accordionData = [
         ]
       },
       {
-        configName: 'Style 2023',
+        configName: 'Style',
         configProperties: [
           { name: 'Тоновані стекла задніх дверей та заднє скло', value: true },
           { name: 'Передні склоочисники з інтервалом роботи, що регулюється', value: true },
@@ -60,19 +60,189 @@ export const accordionData = [
     ]
      
   },
-  // {
-  //   title: 'Фари',
-  //   content:
-  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ipsum dui, tempus at tempus sit amet, ultrices sit amet augue. Nulla et egestas massa. Sed efficitur felis at mi tincidunt lacinia. Proin gravida ligula vel libero volutpat, a suscipit odio lobortis. Donec at nisi tellus. Donec euismod enim nibh, id accumsan neque commodo et. Nunc quis libero feugiat, hendrerit nulla quis, laoreet purus. Nulla nulla elit, cursus vel sem vel, maximus commodo odio. Duis ultrices luctus cursus. Cras sed ultricies erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse id posuere lacus, ac bibendum ante.',
-  // },
-  // {
-  //   title: 'Скло',
-  //   content:
-  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ipsum dui, tempus at tempus sit amet, ultrices sit amet augue. Nulla et egestas massa. Sed efficitur felis at mi tincidunt lacinia. Proin gravida ligula vel libero volutpat, a suscipit odio lobortis. Donec at nisi tellus. Donec euismod enim nibh, id accumsan neque commodo et. Nunc quis libero feugiat, hendrerit nulla quis, laoreet purus. Nulla nulla elit, cursus vel sem vel, maximus commodo odio. Duis ultrices luctus cursus. Cras sed ultricies erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse id posuere lacus, ac bibendum ante.',
-  // },
-  // {
-  //   title: 'Дзеркала заднього виду',
-  //   content:
-  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ipsum dui, tempus at tempus sit amet, ultrices sit amet augue. Nulla et egestas massa. Sed efficitur felis at mi tincidunt lacinia. Proin gravida ligula vel libero volutpat, a suscipit odio lobortis. Donec at nisi tellus. Donec euismod enim nibh, id accumsan neque commodo et. Nunc quis libero feugiat, hendrerit nulla quis, laoreet purus. Nulla nulla elit, cursus vel sem vel, maximus commodo odio. Duis ultrices luctus cursus. Cras sed ultricies erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse id posuere lacus, ac bibendum ante.',
-  // },
+  {
+    title: 'Фари',
+    content: [
+      {
+        configName: 'City',
+        configProperties: [
+          { name: 'Прожекторні галогенові фари головного світла', value: true },
+          { name: 'Прожекторні світлодіодні фари головного світла', value: false },
+          { name: 'Механічний коректор кута нахилу передніх фар', value: true},
+          { name: 'Світлодіодні вогні денного світла', value: true },
+          { name: 'Світлодіодні передні протитуманні фари', value: false },
+          { name: 'Світлодіодний протитуманний ліхтар', value: true },
+          { name: 'Світлодіодні задні габаритні ліхтарі та стоп-сигнали', value: true },
+          { name: 'Світлодіодні задні ліхтарі', value: false },
+          { name: 'Датчик освітлення', value: true },
+          { name: 'Система головного освітлення з функцією супровідного освітлення «Follow me home»', value: true },
+        ]
+      },
+      {
+        configName: 'Live 2023',
+        configProperties: [
+          { name: 'Прожекторні галогенові фари головного світла', value: true },
+          { name: 'Прожекторні світлодіодні фари головного світла', value: false },
+          { name: 'Механічний коректор кута нахилу передніх фар', value: true},
+          { name: 'Світлодіодні вогні денного світла', value: true },
+          { name: 'Світлодіодні передні протитуманні фари', value: true},
+          { name: 'Світлодіодний протитуманний ліхтар', value: true },
+          { name: 'Світлодіодні задні габаритні ліхтарі та стоп-сигнали', value: true },
+          { name: 'Світлодіодні задні ліхтарі', value: false },
+          { name: 'Датчик освітлення', value: true },
+          { name: 'Система головного освітлення з функцією супровідного освітлення «Follow me home»', value: true },
+        ]
+      },
+      {
+        configName: 'Active 2023',
+        configProperties: [
+          { name: 'Прожекторні галогенові фари головного світла', value: true },
+          { name: 'Прожекторні світлодіодні фари головного світла', value: false },
+          { name: 'Механічний коректор кута нахилу передніх фар', value: true},
+          { name: 'Світлодіодні вогні денного світла', value: true },
+          { name: 'Світлодіодні передні протитуманні фари', value: false },
+          { name: 'Світлодіодний протитуманний ліхтар', value: true },
+          { name: 'Світлодіодні задні габаритні ліхтарі та стоп-сигнали', value: true },
+          { name: 'Світлодіодні задні ліхтарі', value: false },
+          { name: 'Датчик освітлення', value: true },
+          { name: 'Система головного освітлення з функцією супровідного освітлення «Follow me home»', value: true },
+        ]
+      },
+      {
+        configName: 'Style',
+        configProperties: [
+          { name: 'Прожекторні галогенові фари головного світла', value: false},
+          { name: 'Прожекторні світлодіодні фари головного світла', value: true },
+          { name: 'Механічний коректор кута нахилу передніх фар', value: true},
+          { name: 'Світлодіодні вогні денного світла', value: true },
+          { name: 'Світлодіодні передні протитуманні фари', value: false },
+          { name: 'Світлодіодний протитуманний ліхтар', value: true },
+          { name: 'Світлодіодні задні габаритні ліхтарі та стоп-сигнали', value: false },
+          { name: 'Світлодіодні задні ліхтарі', value: false },
+          { name: 'Датчик освітлення', value: true },
+          { name: 'Система головного освітлення з функцією супровідного освітлення «Follow me home»', value: true },
+        ]
+      },
+      {
+        configName: 'GR Sport',
+        configProperties: [
+          { name: 'Прожекторні галогенові фари головного світла', value: false},
+          { name: 'Прожекторні світлодіодні фари головного світла', value: true },
+          { name: 'Механічний коректор кута нахилу передніх фар', value: true},
+          { name: 'Світлодіодні вогні денного світла', value: true },
+          { name: 'Світлодіодні передні протитуманні фари', value: false },
+          { name: 'Світлодіодний протитуманний ліхтар', value: true },
+          { name: 'Світлодіодні задні габаритні ліхтарі та стоп-сигнали', value: false },
+          { name: 'Світлодіодні задні ліхтарі', value: false },
+          { name: 'Датчик освітлення', value: true },
+          { name: 'Система головного освітлення з функцією супровідного освітлення «Follow me home»', value: true },
+        ]
+      },
+    ]
+  },
+  {
+    title: 'Скло',
+    content: [
+      {
+        configName: 'City',
+        configProperties: [
+          { name: 'Тоновані стекла задніх дверей та заднє скло', value: false },
+          { name: 'Передні склоочисники з інтервалом роботи, що регулюється', value: true },
+          { name: 'Склоочисники з сенсором дощу', value: false},
+          { name: 'Обігрів заднього скла з автотаймером', value: true },
+          { name: 'Обігрів лобового скла в зоні покою щіток склоочисників з автотаймером', value: false },
+          { name: 'Електросклопідйомники передніх та задніх вікон (травмобезпечні, з автоматичною функцією)', value: true },
+        ]
+      },
+      {
+        configName: 'Live 2023',
+        configProperties: [
+          { name: 'Тоновані стекла задніх дверей та заднє скло', value: false },
+          { name: 'Передні склоочисники з інтервалом роботи, що регулюється', value: true },
+          { name: 'Склоочисники з сенсором дощу', value: false},
+          { name: 'Обігрів заднього скла з автотаймером', value: true },
+          { name: 'Обігрів лобового скла в зоні покою щіток склоочисників з автотаймером', value: false },
+          { name: 'Електросклопідйомники передніх та задніх вікон (травмобезпечні, з автоматичною функцією)', value: true },
+        ]
+      },
+      {
+        configName: 'Active 2023',
+        configProperties: [
+          { name: 'Тоновані стекла задніх дверей та заднє скло', value: false },
+          { name: 'Передні склоочисники з інтервалом роботи, що регулюється', value: true },
+          { name: 'Склоочисники з сенсором дощу', value: true},
+          { name: 'Обігрів заднього скла з автотаймером', value: true },
+          { name: 'Обігрів лобового скла в зоні покою щіток склоочисників з автотаймером', value: false },
+          { name: 'Електросклопідйомники передніх та задніх вікон (травмобезпечні, з автоматичною функцією)', value: true },
+        ]
+      },
+      {
+        configName: 'Style',
+        configProperties: [
+          { name: 'Тоновані стекла задніх дверей та заднє скло', value: true  },
+          { name: 'Передні склоочисники з інтервалом роботи, що регулюється', value: true },
+          { name: 'Склоочисники з сенсором дощу', value: true },
+          { name: 'Обігрів заднього скла з автотаймером', value: true },
+          { name: 'Обігрів лобового скла в зоні покою щіток склоочисників з автотаймером', value: true  },
+          { name: 'Електросклопідйомники передніх та задніх вікон (травмобезпечні, з автоматичною функцією)', value: true },
+        ]
+      },
+      {
+        configName: 'GR Sport',
+        configProperties: [
+          { name: 'Тоновані стекла задніх дверей та заднє скло', value: true  },
+          { name: 'Передні склоочисники з інтервалом роботи, що регулюється', value: true },
+          { name: 'Склоочисники з сенсором дощу', value: true },
+          { name: 'Обігрів заднього скла з автотаймером', value: true },
+          { name: 'Обігрів лобового скла в зоні покою щіток склоочисників з автотаймером', value: true  },
+          { name: 'Електросклопідйомники передніх та задніх вікон (травмобезпечні, з автоматичною функцією)', value: true },
+        ]
+      },
+    ]
+  },
+  {
+    title: 'Система кондиціонування',
+    content: [
+      {
+        configName: 'City',
+        configProperties: [
+          { name: 'Кондиціонер', value: true },
+          { name: 'Клімат-контроль з незалежним регулюванням температури зон водій/передній пасажир', value: false},
+          { name: 'Дефлектори обдуву для 2-го ряду сидінь', value: false},
+        ]
+      },
+      {
+        configName: 'Live 2023',
+        configProperties: [
+          { name: 'Кондиціонер', value: true },
+          { name: 'Клімат-контроль з незалежним регулюванням температури зон водій/передній пасажир', value: true},
+          { name: 'Дефлектори обдуву для 2-го ряду сидінь', value: false},
+        ]
+      },
+      {
+        configName: 'Active 2023',
+        configProperties: [
+          { name: 'Кондиціонер', value: false },
+          { name: 'Клімат-контроль з незалежним регулюванням температури зон водій/передній пасажир', value: true},
+          { name: 'Дефлектори обдуву для 2-го ряду сидінь', value: false},
+        ]
+      },
+      {
+        configName: 'Style',
+        configProperties: [
+          { name: 'Кондиціонер', value: false },
+          { name: 'Клімат-контроль з незалежним регулюванням температури зон водій/передній пасажир', value: true},
+          { name: 'Дефлектори обдуву для 2-го ряду сидінь', value: false},
+        ]
+      },
+      {
+        configName: 'GR Sport',
+        configProperties: [
+          { name: 'Кондиціонер', value: false },
+          { name: 'Клімат-контроль з незалежним регулюванням температури зон водій/передній пасажир', value: true},
+          { name: 'Дефлектори обдуву для 2-го ряду сидінь', value: false},
+        ]
+      },
+    ]
+  },
 ];

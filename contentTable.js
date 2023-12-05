@@ -1,5 +1,4 @@
 export function createTable(content) {
-  console.log('content: ', content);
   let tableHTML = '<table>';
   let  tableBodyHTML = '<tbody>';
 
