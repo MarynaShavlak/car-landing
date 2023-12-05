@@ -121,9 +121,7 @@ font-weight: 700;
     padding: 10px;
     border-top: 1px solid #ddd;
     color: #ddd;
-    padding-left: 30px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding:0;
   }
   
   .btn-icon {
@@ -151,3 +149,36 @@ font-weight: 700;
      font-size: 30px;
      text-align: center;
   }
+
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+   
+  }
+th, td {
+    border: 1px solid #cccccc;
+    padding: 8px;
+    text-align: left;
+    color: #282830;
+}
+thead th {
+ border-top: none;
+}
+
+th {
+    background-color: #ddd;
+}
+
+.header-column {
+     width: 350px;
+}
+
+th:not(:first-child), td:not(:first-child) {
+    width: calc((1170px - 350px) / 4 );
+    text-align: center;
+}
+
+tbody tr:nth-child(2n) {
+background-color: rgb(238, 235, 235)
+}

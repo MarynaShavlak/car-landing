@@ -1,6 +1,7 @@
 import { populateAccordion, handleAccordionClick } from './accordion.js';
 
 
+
 $(document).ready(function () {
     populateAccordion('.accordion__container');
     $('.accordion-title').click(function () {
@@ -56,4 +57,7 @@ $(document).ready(function () {
     calculatePrice();
     compileSpecs();
   });
+
+
+  
 });
