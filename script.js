@@ -5,6 +5,7 @@ $(document).ready(function () {
   const modelPriceText = $('.model-price');
   let modelSpecs = '';
   let modelPrice = 0;
+  let selectedColor = null;
   initAccordion();
   initColorSelection();
   initModel();
@@ -30,14 +31,30 @@ $(document).ready(function () {
     compileSpecs();
   }
 
-  function handleColorSelection(selectedColor) {
-    const imgPath = selectedColor.attr('data-img-path');
-    $('.head-img').attr('src', imgPath);
+  function handleColorSelection(clickedColor) {
+    if (clickedColor.hasClass('active')) {
+        return;
+      }
+  
+      const imgPath = clickedColor.attr('data-img-path');
+      $('.head-img').attr('src', imgPath);
+      resetOtherColors(clickedColor);
+      toggleActiveColorClass(clickedColor);
+      selectedColor = clickedColor;
+  }
+
+  function resetOtherColors(clickedElement) {
+    $('.color-selector .color-item').not(clickedElement).removeClass('active');
+  }
+
+  function toggleActiveColorClass(colorItem) {
+    colorItem.toggleClass('active');
   }
 
   function initColorSelection() {
     $('.color-selector .color-item').on('click', function () {
       handleColorSelection($(this));
+      
     });
   }
 
