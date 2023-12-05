@@ -1,4 +1,4 @@
-export const accordionData = [
+export const corollaData = [
   {
     title: 'Екстер′єр',
     content: [
@@ -245,4 +245,13 @@ export const accordionData = [
       },
     ]
   },
+];
+
+const dataArray = [
+  { className: 'colorWhite', imgPath: 'img/corolla/white.jpg' },
+  { className: 'colorBlack active', imgPath: 'img/corolla/black.jpg' },
+  { className: 'colorBronz', imgPath: 'img/corolla/bronz.jpg' },
+  { className: 'colorSilver', imgPath: 'img/corolla/silver.jpg' },
+  { className: 'colorGray', imgPath: 'img/corolla/gray.jpg' },
+  { className: 'colorRed', imgPath: 'img/corolla/red.png' }
 ];

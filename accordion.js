@@ -1,4 +1,4 @@
-import { accordionData } from "./accordionData.js";
+
 import { createTable } from './contentTable.js';
 
 
@@ -26,8 +26,8 @@ export function handleAccordionClick(clickedElement) {
   toggleIcon(clickedElement);
 }
 
-export function populateAccordion(containerSelector) {
-  populateContainerWithData(accordionData, createAccordionItem, containerSelector);
+export function populateAccordion(containerSelector, data) {
+  populateContainerWithData(data, createAccordionItem, containerSelector);
 }
 
 

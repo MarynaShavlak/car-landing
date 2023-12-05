@@ -1,17 +1,18 @@
 import { populateAccordion, handleAccordionClick } from './accordion.js';
+import { corollaData } from "./carsData/corollaData.js";
 
 $(document).ready(function () {
   const modelSpecsText = $('.model-specs');
   const modelPriceText = $('.model-price');
   let modelSpecs = '';
   let modelPrice = 0;
-  let selectedColor = null;
+  
   initAccordion();
   initColorSelection();
   initModel();
 
   function initAccordion() {
-    populateAccordion('.accordion__container');
+    populateAccordion('.accordion__container', corollaData);
     $('.accordion-title').click(function () {
       handleAccordionClick($(this));
     });
@@ -40,7 +41,6 @@ $(document).ready(function () {
       $('.head-img').attr('src', imgPath);
       resetOtherColors(clickedColor);
       toggleActiveColorClass(clickedColor);
-      selectedColor = clickedColor;
   }
 
   function resetOtherColors(clickedElement) {
