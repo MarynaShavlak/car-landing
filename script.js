@@ -2,6 +2,7 @@ import { handleAccordionClick } from './accordion.js';
 import { corollaData } from './carsData/corollaData.js';
 import { camryData } from './carsData/camryData.js';
 import { createModelMarkUp, updateReviewBlock } from './createMarkup.js';
+import { handleFaqAccordionClick } from './faq-accordion.js';
 
 $(document).ready(function () {
     let data = corollaData;
@@ -21,6 +22,7 @@ $(document).ready(function () {
     initColorSelection();
     initReviewSelection();
     initModel();
+    initFaqBlock();
   }
 
   function initAccordion() {
@@ -43,6 +45,12 @@ $(document).ready(function () {
     compileSpecs();
   }
 
+  function initFaqBlock() {
+    $('.accordion__faq-title').click(function () {
+        handleFaqAccordionClick($(this));
+      });
+  }
+
   function handleColorSelection(clickedColor) {
     if (clickedColor.hasClass('active')) {
       return;
@@ -53,6 +61,7 @@ $(document).ready(function () {
     resetOtherColors(clickedColor);
     toggleActiveColorClass(clickedColor);
   }
+
   function handleModelSelection(clickedModel) {
     if (clickedModel.hasClass('active')) {
       return;

@@ -1,6 +1,4 @@
-
 import { createTable } from './createMarkup.js';
-
 
 function createAccordionItem(data) {
   const { title, content } = data;
@@ -12,7 +10,7 @@ function createAccordionItem(data) {
       '<button class="btn-icon" type="button"><span>Розгорнути</span><i class="fa-solid fa-chevron-down"></i></button>' +
       '</div>' +
       '<div class="accordion-content">' +
-      table  +
+      table +
       '</div>' +
       '</div>',
   );
@@ -29,12 +27,11 @@ export function populateAccordion(containerSelector, data) {
   populateContainerWithData(data, createAccordionItem, containerSelector);
 }
 
-
- function toggleAccordionContent(accordionTitle) {
+function toggleAccordionContent(accordionTitle) {
   accordionTitle.next('.accordion-content').slideToggle();
 }
 
- function closeOtherAccordionContents(clickedElement) {
+function closeOtherAccordionContents(clickedElement) {
   $('.accordion-content')
     .not(clickedElement.next('.accordion-content'))
     .slideUp();
@@ -45,20 +42,22 @@ export function populateAccordion(containerSelector, data) {
     .html('<span>Розгорнути</span><i class="fa-solid fa-chevron-down"></i>');
 }
 
- function toggleActiveClass(accordionTitle) {
+function toggleActiveClass(accordionTitle) {
   accordionTitle.toggleClass('active');
 }
 
- function toggleIcon(accordionTitle) {
+function toggleIcon(accordionTitle) {
   let $icon = accordionTitle.find('.btn-icon');
   if ($icon.children().hasClass('fa-chevron-down')) {
     $icon.html('<span>Згорнути</span><i class="fa-solid fa-chevron-up"></i>');
   } else {
-    $icon.html('<span>Розгорнути</span><i class="fa-solid fa-chevron-down"></i>');
+    $icon.html(
+      '<span>Розгорнути</span><i class="fa-solid fa-chevron-down"></i>',
+    );
   }
 }
 
-function populateContainerWithData(
+export function populateContainerWithData(
   dataArray,
   createItemFunction,
   containerSelector,
@@ -68,4 +67,3 @@ function populateContainerWithData(
     $(containerSelector).append(item);
   });
 }
-

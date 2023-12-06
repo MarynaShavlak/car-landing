@@ -167,7 +167,7 @@ ul {
   background-color: red;
 }
 .colorBrown {
-  background-color: #1f1713;
+  background-color: #402d24;
 }
 .colorBlue {
   background-color: #001e55;
@@ -632,10 +632,8 @@ input[type='radio']:checked ~ .bullet .line.seven {
   }
 }
 
-
-
 .model__review {
-   margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .review__title {
@@ -692,10 +690,8 @@ input[type='radio']:checked ~ .bullet .line.seven {
   gap: 30px;
 }
 
-
-
 .info__img {
-   width:570px;
+  width: 570px;
 }
 .info__title {
   margin-bottom: 16px;
@@ -718,11 +714,94 @@ input[type='radio']:checked ~ .bullet .line.seven {
 .info__text-list {
   display: flex;
   flex-direction: column;
-  gap:5px;
+  gap: 5px;
   list-style: circle;
-   margin-bottom: 16px;
-   color: #585858;
-   font-size: 14px;
-   line-height: 1.214;
-   padding-left: 80px;
+  margin-bottom: 16px;
+  color: #585858;
+  font-size: 14px;
+  line-height: 1.214;
+  padding-left: 80px;
+}
+
+.accordion__faq {
+  margin-bottom: 40px;
+}
+
+.accordion__faq-title {
+  position: relative;
+  padding: 10px;
+  text-align: left;
+  padding-left: 30px;
+  
+  color: #000;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.44;
+  transition: all 300ms ease;
+}
+
+.accordion__faq-title:after {
+   content:'';
+   position:absolute;
+   bottom:0;
+   left: 30px;
+   height: 1px;
+   width: 100%;
+   background-color: #ddd;
+}
+
+
+
+.accordion__faq-title.active {
+  color: #ff0022;
+}
+
+.accordion__faq-title.active::after {
+  height: 0;
+}
+
+.accordion__faq-title:hover {
+  color: #ff0022;
+}
+
+.accordion__faq-content {
+  display: none;
+  padding: 10px;
+  color: #585858;
+  line-height: 107%;
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+.accordion__faq-title.active + .accordion__faq-content::after {
+  content:'';
+   position:absolute;
+   bottom:0;
+   left: 30px;
+   height: 1px;
+   width: 100%;
+   background-color: #ddd;
+}
+
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: #ff0022;
+  font-size: 14px;
+  font-weight: 900;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
 }

@@ -1,7 +1,8 @@
 import { populateAccordion } from './accordion.js';
+import { createFaqBlock } from './faq-accordion.js';
 
 export function createModelMarkUp(data) {
-  const { name, startColor, characteristics, colors, variants, review } = data;
+  const { name, startColor, characteristics, colors, variants, review, questions } = data;
   $('.model__info').append('<h2 class="model__title">' + name + '</h2>');
   $('.model__info').append(createHeader(startColor, name));
   $('.model__info').append(createAutoForm(characteristics));
@@ -9,7 +10,7 @@ export function createModelMarkUp(data) {
   $('.model__info').append(createVariantsBlock());
   populateAccordion('.accordion__container', variants);
   $('.model__info').append(createReviewBlock(review));
-
+  $('.model__info').append(createFaqBlock(questions));
 }
 
 export function createTable(content) {
@@ -181,7 +182,6 @@ function createReviewBlock(info) {
       .addClass('info__title')
       .text(position.title);
     const $text = position.text.map(para => {
-      console.log('para: ', para);
       return $('<p>').addClass('info__text').text(para);
     }
       
@@ -247,7 +247,6 @@ export function updateReviewBlock(info, index) {
 
       const $text = position.text.map(param => {
         const isList = param.includes("\n");
-        console.log('isList: ', isList);
         let el;
         if(isList) {
           const additionalInfoList = param
