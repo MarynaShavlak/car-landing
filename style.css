@@ -55,7 +55,8 @@ ul {
   justify-content: space-between;
 }
 .head-img {
-  width: 55%;
+  width: 650px;
+  height: 250px;
 }
 
 .model__title {
@@ -111,7 +112,7 @@ ul {
   background-color: black;
 }
 .colorBronz {
-  background-color: rgb(90, 37, 37);
+  background-color: #756f5f;
 }
 .colorSilver {
   background-color: rgb(196, 196, 196);
@@ -121,6 +122,12 @@ ul {
 }
 .colorRed {
   background-color: red;
+}
+.colorBrown {
+  background-color: #1f1713;
+}
+.colorBlue {
+  background-color: #001e55;
 }
 
 .color-item.active:before {

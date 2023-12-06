@@ -6,7 +6,8 @@ export function createModelMarkUp(data) {
   $('.model__info').append(createHeader(startColor, name));
   $('.model__info').append(createAutoForm(characteristics));
   $('.model__info').append(createColorSelectorBlock(colors));
-  $('.model__info').append(createVariantsBlock(variants));
+  $('.model__info').append(createVariantsBlock());
+  populateAccordion('.accordion__container', variants);
 }
 
 export function createTable(content) {
@@ -72,7 +73,6 @@ function createColorSelectorBlock(colors) {
 }
 
 function createRadioButtons(key, title, types) {
-  console.log('key: ', key);
   let radioGroup = $('<div class="item"></div>');
 
   radioGroup.append('<h4>' + title + '</h4>');
@@ -129,7 +129,7 @@ function createAutoForm(characteristics) {
   return autoForm;
 }
 
-function createVariantsBlock(variants) {
+function createVariantsBlock() {
   let accordionWrapper = $('<div class="accordion__wrapper"></div>');
   accordionWrapper.append(
     '<h2 class="accordion__wrap-title">Порівняння комплектацій</h2>',
@@ -138,8 +138,6 @@ function createVariantsBlock(variants) {
   let accordionContainer = $(
     '<div class="accordion__container variants"></div>',
   );
-  populateAccordion('.accordion__container', variants);
-  accordionWrapper.append(accordionContainer);
-
-  return accordionWrapper;
+   accordionWrapper.append(accordionContainer);
+     return accordionWrapper;
 }
