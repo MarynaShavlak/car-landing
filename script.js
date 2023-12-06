@@ -1,7 +1,9 @@
 import { populateAccordion, handleAccordionClick } from './accordion.js';
 import { corollaData } from "./carsData/corollaData.js";
+import { createModelMarkUp } from './createMarkup.js';
 
 $(document).ready(function () {
+createModelMarkUp(corollaData);
   const modelSpecsText = $('.model-specs');
   const modelPriceText = $('.model-price');
   let modelSpecs = '';
@@ -12,13 +14,13 @@ $(document).ready(function () {
   initModel();
 
   function initAccordion() {
-    populateAccordion('.accordion__container', corollaData);
     $('.accordion-title').click(function () {
       handleAccordionClick($(this));
     });
   }
 
   function initModel() {
+    console.log('init calculations');
     calculatePrice();
     compileSpecs();
 
@@ -61,13 +63,15 @@ $(document).ready(function () {
   function calculatePrice() {
     let modelPriceEngine = $('input[name=engine]:checked', '.auto-form').val();
     let modelPricePackage = $(
-      'input[name=package]:checked',
-      '.auto-form',
-    ).val();
+        'input[name=package]:checked',
+        '.auto-form',
+        ).val();
+        
     let modelPriceTransmision = $(
-      'input[name=transmision]:checked',
-      '.auto-form',
-    ).val();
+        'input[name=transmission]:checked',
+        '.auto-form',
+        ).val();
+      
     modelPriceEngine = parseInt(modelPriceEngine);
     modelPricePackage = parseInt(modelPricePackage);
     modelPriceTransmision = parseInt(modelPriceTransmision);
@@ -80,7 +84,7 @@ $(document).ready(function () {
     modelSpecs +=
       ', ' + $('input[name=package]:checked + label', '.auto-form').text();
     modelSpecs +=
-      ', ' + $('input[name=transmision]:checked + label', '.auto-form').text();
+      ', ' + $('input[name=transmission]:checked + label', '.auto-form').text();
     modelSpecsText.text(modelSpecs);
   }
 });

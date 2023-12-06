@@ -1,5 +1,5 @@
 
-import { createTable } from './contentTable.js';
+import { createTable } from './createMarkup.js';
 
 
 function createAccordionItem(data) {
@@ -25,7 +25,6 @@ export function handleAccordionClick(clickedElement) {
   toggleActiveClass(clickedElement);
   toggleIcon(clickedElement);
 }
-
 export function populateAccordion(containerSelector, data) {
   populateContainerWithData(data, createAccordionItem, containerSelector);
 }
