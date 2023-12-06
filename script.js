@@ -1,10 +1,11 @@
 import { handleAccordionClick } from './accordion.js';
 import { corollaData } from './carsData/corollaData.js';
 import { camryData } from './carsData/camryData.js';
-import { createModelMarkUp } from './createMarkup.js';
+import { createModelMarkUp, updateReviewBlock } from './createMarkup.js';
 
 $(document).ready(function () {
-  createModelMarkUp(corollaData);
+    let data = corollaData;
+  createModelMarkUp(data);
   initializeModel();
   initModelSelection();
 
@@ -18,6 +19,7 @@ $(document).ready(function () {
   function initializeModel() {
     initAccordion();
     initColorSelection();
+    initReviewSelection();
     initModel();
   }
 
@@ -57,12 +59,24 @@ $(document).ready(function () {
     }
     const modelName = clickedModel.attr('data-name');
     if (modelName === 'corollaData') {
-      resetAndInitModel(corollaData);
+        data = corollaData;
+      resetAndInitModel(data);
     } else if (modelName === 'camryData') {
-      resetAndInitModel(camryData);
+        data = camryData;
+      resetAndInitModel(data);
     }
     $('.models__item').removeClass('active');
     clickedModel.addClass('active');
+  }
+
+  function handleReviewPosition(clickedPosition) {
+    if (clickedPosition.hasClass('active')) {
+      return;
+    }
+    $('.review__item').removeClass('active');
+    clickedPosition.addClass('active');
+    const index = clickedPosition.data('index');
+    updateReviewBlock(data.review, index);
   }
 
   function resetOtherColors(clickedElement) {
@@ -84,12 +98,16 @@ $(document).ready(function () {
       handleModelSelection($(this));
     });
   }
+  function initReviewSelection() {
+    $('.review__item').click(function () {
+      handleReviewPosition($(this));
+    });
+  }
 
   function calculatePrice() {
     let modelPriceText = $('.model-price');
     let modelPrice = 0;
     let modelPriceEngine = $('input[name=engine]:checked', '.auto-form').val();
-    console.log('modelPriceEngine: ', modelPriceEngine);
     let modelPricePackage = $(
       'input[name=package]:checked',
       '.auto-form',
@@ -104,9 +122,7 @@ $(document).ready(function () {
     modelPricePackage = parseInt(modelPricePackage);
     modelPriceTransmision = parseInt(modelPriceTransmision);
     modelPrice = modelPriceEngine + modelPricePackage + modelPriceTransmision;
-    console.log(' modelPrice: ', modelPrice);
     modelPriceText.text(modelPrice + ' грн');
-    console.log('modelPriceText: ', modelPriceText);
   }
 
   function compileSpecs() {
@@ -118,6 +134,5 @@ $(document).ready(function () {
     modelSpecs +=
       ', ' + $('input[name=transmission]:checked + label', '.auto-form').text();
     modelSpecsText.text(modelSpecs);
-    console.log('modelSpecsText: ', modelSpecsText);
   }
 });

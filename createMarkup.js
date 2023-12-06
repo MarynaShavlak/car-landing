@@ -1,13 +1,15 @@
 import { populateAccordion } from './accordion.js';
 
 export function createModelMarkUp(data) {
-  const { name, startColor, characteristics, colors, variants } = data;
+  const { name, startColor, characteristics, colors, variants, review } = data;
   $('.model__info').append('<h2 class="model__title">' + name + '</h2>');
   $('.model__info').append(createHeader(startColor, name));
   $('.model__info').append(createAutoForm(characteristics));
   $('.model__info').append(createColorSelectorBlock(colors));
   $('.model__info').append(createVariantsBlock());
   populateAccordion('.accordion__container', variants);
+  $('.model__info').append(createReviewBlock(review));
+
 }
 
 export function createTable(content) {
@@ -92,19 +94,20 @@ function createRadioButtons(key, title, types) {
         (isChecked ? ' checked' : '') +
         ' />',
     );
-   
+
     formBlock.append('<label for="' + name + '">' + label + '</label>');
-    formBlock.append('<div class="bullet">' +
-    '<div class="line zero"></div>' +
-    '<div class="line one"></div>' +
-    '<div class="line two"></div>' +
-    '<div class="line three"></div>' +
-    '<div class="line four"></div>' +
-    '<div class="line five"></div>' +
-    '<div class="line six"></div>' +
-    '<div class="line seven"></div>' +
-    '</div>',
-)
+    formBlock.append(
+      '<div class="bullet">' +
+        '<div class="line zero"></div>' +
+        '<div class="line one"></div>' +
+        '<div class="line two"></div>' +
+        '<div class="line three"></div>' +
+        '<div class="line four"></div>' +
+        '<div class="line five"></div>' +
+        '<div class="line six"></div>' +
+        '<div class="line seven"></div>' +
+        '</div>',
+    );
     radioGroup.append(formBlock);
   });
 
@@ -134,7 +137,13 @@ function createAutoForm(characteristics) {
   let autoSpecs = $('<div class="auto-specs"></div>');
 
   Object.keys(characteristics).forEach(function (key) {
-    autoSpecs.append(createRadioButtons(key, characteristics[key].title, characteristics[key].types));
+    autoSpecs.append(
+      createRadioButtons(
+        key,
+        characteristics[key].title,
+        characteristics[key].types,
+      ),
+    );
   });
 
   autoForm.append(autoSpecs);
@@ -150,6 +159,97 @@ function createVariantsBlock() {
   let accordionContainer = $(
     '<div class="accordion__container variants"></div>',
   );
-   accordionWrapper.append(accordionContainer);
-     return accordionWrapper;
+  accordionWrapper.append(accordionContainer);
+  return accordionWrapper;
+}
+
+function createReviewBlock(info) {
+  const $block = $('<div>').addClass('model__review');
+  const title = $('<h4>').addClass('review__title').text('Огляд моделі');
+  $block.append(title);
+  const {positions} = info;
+  const $ul = $('<ul>').addClass('review__info');
+  const posList = positions[0].descr;
+  posList.forEach((position, index) => {
+    const $li = $('<li>').addClass('info__item');
+    const $img = $('<img>')
+      .attr('src', position.image)
+      .addClass('info__img')
+      .attr('alt', 'Фото машини');
+    const $wrap = $('<div>').addClass('info__wrap');
+    const $title = $('<h4>')
+      .addClass('info__title')
+      .text(position.title);
+    const $text = position.text.map(para =>
+      $('<p>').addClass('info__text').text(para),
+    );
+
+    $wrap.append($title, $text);
+
+    if (index % 2 !== 0) {
+      $li.append($wrap, $img);
+    } else {
+      $li.append($img, $wrap);
+    }
+    $ul.append($li);
+  });
+
+  $block.append(createReviewList(positions));
+  $block.append($ul);
+  return $block;
+}
+
+
+function createListItem(position, index) {
+  const isActive = index === 0;
+  const classNames = isActive ? 'review__item active' : 'review__item';
+  const listItem = $('<li>', {
+    class: classNames,
+    text: position.name,
+    'data-index': index  
+  });
+  return listItem;
+}
+
+function createReviewList(positions) {
+  let reviewList = $('<ul>', { class: 'review__list' });
+  positions.forEach(function (position, index) {
+    let listItem = createListItem(position, index);
+    reviewList.append(listItem);
+  });
+
+  return reviewList;
+}
+
+
+export function updateReviewBlock(info, index) {
+  const {positions} = info;
+  $('.review__info').empty();
+  const posList = positions[index].descr;
+  posList.forEach((position, index) => {
+    const $li = $('<li>').addClass('info__item');
+    const $img = $('<img>')
+      .attr('src', position.image)
+      .addClass('info__img')
+      .attr('alt', 'Фото машини')
+      .attr('width', '570')
+      .attr('height', '403');
+    const $wrap = $('<div>').addClass('info__wrap');
+    const $title = $('<h4>')
+      .addClass('info__title')
+      .text(position.title);
+    const $text = position.text.map(para =>
+      $('<p>').addClass('info__text').text(para),
+    );
+
+    $wrap.append($title, $text);
+
+    if (index % 2 !== 0) {
+      $li.append($wrap, $img);
+    } else {
+      $li.append($img, $wrap);
+    }
+    $('.review__info').append($li);
+  });
+
 }
