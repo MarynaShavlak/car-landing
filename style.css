@@ -714,3 +714,15 @@ input[type='radio']:checked ~ .bullet .line.seven {
 .info__text:not(:last-child) {
   margin-bottom: 16px;
 }
+
+.info__text-list {
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  list-style: circle;
+   margin-bottom: 16px;
+   color: #585858;
+   font-size: 14px;
+   line-height: 1.214;
+   padding-left: 80px;
+}

@@ -180,8 +180,13 @@ function createReviewBlock(info) {
     const $title = $('<h4>')
       .addClass('info__title')
       .text(position.title);
-    const $text = position.text.map(para =>
-      $('<p>').addClass('info__text').text(para),
+    const $text = position.text.map(para => {
+      console.log('para: ', para);
+      return $('<p>').addClass('info__text').text(para);
+    }
+      
+      
+
     );
 
     $wrap.append($title, $text);
@@ -238,9 +243,25 @@ export function updateReviewBlock(info, index) {
     const $title = $('<h4>')
       .addClass('info__title')
       .text(position.title);
-    const $text = position.text.map(para =>
-      $('<p>').addClass('info__text').text(para),
-    );
+
+
+      const $text = position.text.map(param => {
+        const isList = param.includes("\n");
+        console.log('isList: ', isList);
+        let el;
+        if(isList) {
+          const additionalInfoList = param
+          .split('\n')
+          .map(para => $('<li>').addClass('info__text-item').text(para.trim()));
+      
+          el = $('<ul>').addClass('info__text-list').append(additionalInfoList);
+        } else {
+          el =$('<p>').addClass('info__text').text(param);
+        }
+
+        
+        return el;
+      })
 
     $wrap.append($title, $text);
 
