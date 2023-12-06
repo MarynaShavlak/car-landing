@@ -92,7 +92,19 @@ function createRadioButtons(key, title, types) {
         (isChecked ? ' checked' : '') +
         ' />',
     );
+   
     formBlock.append('<label for="' + name + '">' + label + '</label>');
+    formBlock.append('<div class="bullet">' +
+    '<div class="line zero"></div>' +
+    '<div class="line one"></div>' +
+    '<div class="line two"></div>' +
+    '<div class="line three"></div>' +
+    '<div class="line four"></div>' +
+    '<div class="line five"></div>' +
+    '<div class="line six"></div>' +
+    '<div class="line seven"></div>' +
+    '</div>',
+)
     radioGroup.append(formBlock);
   });
 
