@@ -5,8 +5,8 @@ export function createModelMarkUp(data) {
   const { name, startColor, characteristics, colors, variants, review, questions } = data;
   $('.model__info').append('<h2 class="model__title">' + name + '</h2>');
   $('.model__info').append(createHeader(startColor, name));
-  $('.model__info').append(createAutoForm(characteristics));
   $('.model__info').append(createColorSelectorBlock(colors));
+  $('.model__info').append(createAutoForm(characteristics));
   $('.model__info').append(createVariantsBlock());
   populateAccordion('.accordion__container', variants);
   $('.model__info').append(createReviewBlock(review));
