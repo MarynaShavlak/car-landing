@@ -2,41 +2,132 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:  "Poppins", sans-serif;
 }
 
 body {
-  background-color: #f0f0f0;
+  background-color: #FFFFFF;
 }
 
 ul {
   list-style: none;
 }
+ a{
+   text-decoration: none;
+ }
 .container {
-  padding-top: 100px;
-  max-width: 1170px;
+width: 1280px;
   margin: auto;
 }
 
-.cars__title {
-  text-align: center;
-  font-size: 70px;
+.header {
+ background-color: #030915;
+  padding-right: 30px;
+
+}
+.hero {
+  height: 540px;
+  background-color: #030915;
 }
 
+
+.header__nav {
+  position: relative;
+  display: flex;
+  justify-content: end;
+
+}
+.header__logo {
+  position: absolute;
+  top:-50px;
+  left: 0;
+  width: 206px;
+  height: 206px;
+}
+.menu {
+  display: flex;
+  gap:40px;
+
+}
+
+.menu__link {
+  font-size: 20px;
+  font-weight: 500;
+  color: #F0F0F0;
+}
+
+.container--wrapper {
+  padding-top: 50px;
+  background-image: url('./img/back3.png'), url('./img/back1.png'), url('./img/back2.png'), url('./img/back4.png');
+  background-repeat: no-repeat;
+background-position: top left, bottom  20px left 250px , top 80px center, bottom -50px right -10px;
+}
+
+
+.container--hero {
+  padding-top: 40px;
+  position: relative;
+  height: 600px;
+}
+
+
+.hero__title {
+  font-family: "Sansita", sans-serif;
+  font-size: 96px;
+  font-style: italic;
+  color: #F0F0F0;
+  width: 559px;
+
+}
+
+.hero__text {
+  font-size: 24px;
+  color: #cacaca;
+  width: 426px;
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+.hero__btn {
+  background-color: #030915;
+  font-size: 28px;
+  color: #F3F4F6;
+  border-radius: 12px;
+  border: 3px solid #fcfcfc;
+  padding: 20px 28px;
+}
+.hero__img {
+  position: absolute;
+  top: 150px;
+  left: 260px;
+
+}
+
+.container--main {
+  margin-top: 200px;
+}
+
+
 .models__wrap {
-  border: 1px solid #cbcdc9;
+  border: 2px solid #D9D9D9;
+  border-radius: 10px;
   margin-bottom: 60px;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
   width: fit-content;
   box-shadow: 0px 0px 62px rgba(77, 79, 83, 0.3);
+
+  margin-top: 60px;
 }
 .cars__text {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
+  font-family: "Sansita", sans-serif;
+  font-size: 64px;
+  font-style: italic;
+  color: #272727;
 }
+
+
 .models__list {
   display: flex;
   gap: 40px;
@@ -44,23 +135,25 @@ ul {
 
 .models__item {
   cursor: pointer;
-  background-color: #aba8a8;
-  border-radius: 100px;
+  background-color: transparent;
+  border-radius: 10px;
   padding: 20px 30px;
   font-size: 24px;
   font-weight: 700;
-  color: #282830;
+  color: #6F6F6F;
+  transition: color 0.2s ease;
+}
+.models__item:hover{
+  color:#0E317D;
 }
 
+
 .models__item.active {
-  background-color: #ff0022;
+  background-color: #0E317D;
   color: #ddd;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-}
+
 .head-img {
   width: 650px;
   height: 250px;
@@ -69,18 +162,27 @@ ul {
 .model__title {
   margin-bottom: 40px;
   text-align: center;
+  font-family: "Sansita", sans-serif;
   font-size: 40px;
-  color: #ff0022;
+  color: #0E317D;
   font-weight: 900;
 }
 .model-summary {
   width: 35%;
-  border: 1px solid #cbcdc9;
+  border: 2px solid #D9D9D9;
+  border-radius: 10px;
   padding: 15px;
   box-shadow: 0px 0px 62px rgba(77, 79, 83, 0.3);
 }
+
+.model-name {
+  font-size: 24px;
+  font-family: "Sansita", sans-serif;
+
+}
 .auto-form {
-  border: 1px solid #cbcdc9;
+  border: 2px solid #D9D9D9;
+  border-radius: 10px;
   padding: 15px;
   margin-top: 60px;
   box-shadow: 0px 0px 62px rgba(77, 79, 83, 0.3);
@@ -90,6 +192,8 @@ ul {
   text-align: center;
   margin-bottom: 30px;
   font-size: 28px;
+  font-family: "Sansita", sans-serif;
+  font-style: italic;
 }
 
 .auto-specs {
@@ -98,7 +202,10 @@ ul {
 }
 
 .auto-specs .item {
-  background-color: #ff00222c;
+  background-color: #212838;
+  border-radius:15px;
+  color: #ffffff;
+
 }
 
 .auto-specs .item h4 {
@@ -107,13 +214,14 @@ ul {
 }
 
 .btn-order {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 100px;
-  background-color: #282830;
-  color: #ddd;
-  font-size: 24px;
+width: 100%;
   cursor: pointer;
+  background-color: #030915;
+  font-size: 28px;
+  color: #F3F4F6;
+  border-radius: 12px;
+  border: 3px solid #fcfcfc;
+  padding: 20px 28px;
 }
 
 .item {
@@ -123,7 +231,8 @@ ul {
 }
 
 .colors__wrap {
-  border: 1px solid #cbcdc9;
+  border: 2px solid #D9D9D9;
+  border-radius: 10px;
   padding: 15px;
   margin-top: 60px;
   box-shadow: 0px 0px 62px rgba(77, 79, 83, 0.3);
@@ -181,7 +290,7 @@ ul {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #ff0022;
+  background-color: #001e55;
   background-image: url(img/check.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -196,6 +305,7 @@ h1 {
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 26px;
+  text-align: end;
 }
 
 .model-specs {
@@ -203,7 +313,7 @@ h1 {
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 26px;
-  color: #ff0022;
+  color: #0E317D;
 }
 
 .accordion__container {
@@ -221,7 +331,7 @@ h1 {
   position: relative;
   cursor: pointer;
   padding: 10px;
-  background-color: #282830;
+  background-color: #212838;
   text-align: left;
   color: #ddd;
   font-size: 24px;
@@ -271,7 +381,7 @@ table {
 }
 th,
 td {
-  border: 1px solid #cccccc;
+  border: 1px solid #6F6F6F;
   padding: 8px;
   text-align: left;
   color: #282830;
@@ -331,7 +441,7 @@ label:before {
   content: '';
   width: 10px;
   height: 10px;
-  background: #282830;
+  background: #ffffff;
   position: absolute;
   left: 16px;
   top: 11px;
@@ -361,7 +471,7 @@ input[type='radio'] {
   height: 23px;
   left: 10px;
   top: 5px;
-  border: 3px solid #282830;
+  border: 3px solid #ffffff;
   opacity: 0;
   border-radius: 50%;
 }
@@ -638,8 +748,11 @@ input[type='radio']:checked ~ .bullet .line.seven {
 
 .review__title {
   margin-bottom: 20px;
-  font-size: 30px;
-  text-align: center;
+ text-align: center;
+  font-family: "Sansita", sans-serif;
+  font-size: 64px;
+  font-style: italic;
+  color: #272727;
 }
 .review__list {
   display: flex;
@@ -657,6 +770,7 @@ input[type='radio']:checked ~ .bullet .line.seven {
   text-align: center;
   text-transform: uppercase;
   border: 1px solid #dedede;
+
   color: #282830;
   width: calc(100% / 4);
   cursor: pointer;
@@ -672,11 +786,11 @@ input[type='radio']:checked ~ .bullet .line.seven {
 
 .review__item.active {
   color: #fff;
-  background-color: #ff0022;
+  background-color: #0E317D;
 }
 
 .review__item:not(.active):hover {
-  border: 1px solid #ff0022;
+  border: 1px solid #0E317D;
 }
 
 .review__info {
@@ -689,20 +803,29 @@ input[type='radio']:checked ~ .bullet .line.seven {
   display: flex;
   gap: 30px;
 }
+.info__wrap {
+  border-radius: 10px;
+  background-color: #161C28;
+  padding: 15px;
+
+}
 
 .info__img {
   width: 570px;
+  border-radius: 10px;
 }
 .info__title {
+  font-family:  "Poppins", sans-serif;
   margin-bottom: 16px;
-  font-size: 18px;
+  font-size: 38px;
+  font-style: italic;
   font-weight: 600;
-  color: #585858;
+  color: #EBEBEB;
   line-height: 1.214;
 }
 
 .info__text {
-  color: #585858;
+  color: #EBEBEB;
   font-size: 14px;
   line-height: 1.214;
 }
@@ -717,7 +840,7 @@ input[type='radio']:checked ~ .bullet .line.seven {
   gap: 5px;
   list-style: circle;
   margin-bottom: 16px;
-  color: #585858;
+  color: #EBEBEB;
   font-size: 14px;
   line-height: 1.214;
   padding-left: 80px;
@@ -732,7 +855,7 @@ input[type='radio']:checked ~ .bullet .line.seven {
   padding: 10px;
   text-align: left;
   padding-left: 30px;
-  
+
   color: #000;
   cursor: pointer;
   font-size: 16px;
@@ -755,7 +878,7 @@ input[type='radio']:checked ~ .bullet .line.seven {
 
 
 .accordion__faq-title.active {
-  color: #ff0022;
+  color: #0E317D;
 }
 
 .accordion__faq-title.active::after {
@@ -763,7 +886,7 @@ input[type='radio']:checked ~ .bullet .line.seven {
 }
 
 .accordion__faq-title:hover {
-  color: #ff0022;
+  color: #0E317D;
 }
 
 .accordion__faq-content {
@@ -797,11 +920,16 @@ input[type='radio']:checked ~ .bullet .line.seven {
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  color: #ff0022;
+  color: #0E317D;
   font-size: 14px;
   font-weight: 900;
   border: none;
   width: 30px;
   height: 30px;
   border-radius: 5px;
+}
+
+.car-info {
+  border-radius: 8px;
+  display: flex;
 }

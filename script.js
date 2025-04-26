@@ -1,8 +1,8 @@
-import { handleAccordionClick } from './accordion.js';
-import { corollaData } from './carsData/corollaData.js';
-import { camryData } from './carsData/camryData.js';
-import { createModelMarkUp, updateReviewBlock } from './createMarkup.js';
-import { handleFaqAccordionClick } from './faq-accordion.js';
+import { handleAccordionClick } from './scripts/accordion.js';
+import { corollaData } from './data/corollaData.js';
+import { camryData } from './data/camryData.js';
+import { createModelMarkUp, updateReviewBlock } from './scripts/createMarkup.js';
+import { handleFaqAccordionClick } from './scripts/faq-accordion.js';
 
 $(document).ready(function () {
     let data = corollaData;

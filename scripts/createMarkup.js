@@ -116,13 +116,13 @@ function createRadioButtons(key, title, types) {
 }
 
 function createHeader(imgSrc, modelName) {
-  let header = $('<div class="header"></div>');
+  let header = $('<div class="car-info"></div>');
   header.append(
     '<img src="' + imgSrc + '" alt="Фото машини" class="head-img" />',
   );
 
   let modelSummary = $('<div class="model-summary"></div>');
-  modelSummary.append('<h2 class="model-name">' + modelName + '</h2>');
+  modelSummary.append('<h3 class="model-name">' + modelName + '</h3>');
   modelSummary.append('<div class="model-specs"></div>');
   modelSummary.append('<p class="model-price"></p>');
   modelSummary.append('<button class="btn-order">Замовити</button>');
@@ -184,8 +184,8 @@ function createReviewBlock(info) {
     const $text = position.text.map(para => {
       return $('<p>').addClass('info__text').text(para);
     }
-      
-      
+
+
 
     );
 
@@ -211,7 +211,7 @@ function createListItem(position, index) {
   const listItem = $('<li>', {
     class: classNames,
     text: position.name,
-    'data-index': index  
+    'data-index': index
   });
   return listItem;
 }
@@ -252,13 +252,13 @@ export function updateReviewBlock(info, index) {
           const additionalInfoList = param
           .split('\n')
           .map(para => $('<li>').addClass('info__text-item').text(para.trim()));
-      
+
           el = $('<ul>').addClass('info__text-list').append(additionalInfoList);
         } else {
           el =$('<p>').addClass('info__text').text(param);
         }
 
-        
+
         return el;
       })
 

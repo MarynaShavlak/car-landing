@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jQuery Toyota</title>
+    <title>Car Landing</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -11,13 +11,47 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1 class="cars__title">Toyota Models</h1>
+  <header class="header">
+    <div class="container container--wrapper">
+      <nav class="header__nav">
+        <a href="./index.html" class="header__logo">
+          <img src="img/logo.png" alt="зображення логотипу" class="header__logo-img"
+        </a>
+        <ul class="menu">
+          <li class="menu__item item--dropdown"><a href="#" class="menu__link link ">Home</a>
+          </li>
+          <li class="menu__item"><a href="#" class="menu__link link ">About</a></li>
+          <li class="menu__item"><a href="#" class="menu__link link ">Services</a></li>
+          <li class="menu__item"><a href="#" class="menu__link link ">Contact</a></li>
+        </ul>
+
+      </nav>
+      <div class="container container--hero">
+        <h1 class="hero__title">
+          Find Your
+          Dream Car
+        </h1>
+        <p class="hero__text">
+          Lorem Ipsum has been the industry's standard dummy text ever since
+        </p>
+        <button class="hero__btn">Read More</button>
+        <img class="hero__img" src="img/hero-image.png" alt="hero img">
+      </div>
+    </div>
+
+    </div>
+  </header>
+
+    <main class="container container--main">
+      <h2 class="cars__text">Top Categories </h2>
       <div class="models__wrap">
-        <p class="cars__text">Обери модель</p>
+
         <ul class="models__list">
           <li class="models__item active" data-name="corollaData">
             Toyota Corolla
@@ -26,7 +60,7 @@
         </ul>
       </div>
       <div class="model__info"></div>
-      </div>
+      </main>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"

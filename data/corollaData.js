@@ -1,6 +1,6 @@
 export const corollaData = {
   name: 'Model Toyota Corolla',
-  startColor: 'img/corolla/black.jpg',
+  startColor: 'img/corolla/black.png',
   characteristics: {
     engine: {
       title: 'Двигун',
@@ -27,11 +27,11 @@ export const corollaData = {
     },
   },
   colors: [
-    { className: 'colorWhite', imgPath: 'img/corolla/white.jpg' },
-    { className: 'colorBlack active', imgPath: 'img/corolla/black.jpg' },
-    { className: 'colorBronz', imgPath: 'img/corolla/bronz.jpg' },
-    { className: 'colorSilver', imgPath: 'img/corolla/silver.jpg' },
-    { className: 'colorGray', imgPath: 'img/corolla/gray.jpg' },
+    { className: 'colorWhite', imgPath: 'img/corolla/white.png' },
+    { className: 'colorBlack active', imgPath: 'img/corolla/black.png' },
+    { className: 'colorBronz', imgPath: 'img/corolla/bronz.png' },
+    { className: 'colorSilver', imgPath: 'img/corolla/silver.png' },
+    { className: 'colorGray', imgPath: 'img/corolla/gray.png' },
     { className: 'colorRed', imgPath: 'img/corolla/red.png' },
   ],
   variants: [
