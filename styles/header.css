@@ -1,0 +1,81 @@
+.header {
+    background-color: #030915;
+    padding-right: 30px;
+
+}
+.hero {
+    height: 540px;
+    background-color: #030915;
+}
+
+
+.header__nav {
+    position: relative;
+    display: flex;
+    justify-content: end;
+
+}
+.header__logo {
+    position: absolute;
+    top:-50px;
+    left: 0;
+    width: 206px;
+    height: 206px;
+}
+.menu {
+    display: flex;
+    gap:40px;
+
+}
+
+.menu__link {
+    font-size: 20px;
+    font-weight: 500;
+    color: #F0F0F0;
+}
+
+.container--wrapper {
+    padding-top: 50px;
+    background-image: url('./img/back3.png'), url('./img/back1.png'), url('./img/back2.png'), url('./img/back4.png');
+    background-repeat: no-repeat;
+    background-position: top left, bottom  20px left 250px , top 80px center, bottom -50px right -10px;
+}
+
+
+.container--hero {
+    padding-top: 40px;
+    position: relative;
+    height: 600px;
+}
+
+
+.hero__title {
+    font-family: "Sansita", sans-serif;
+    font-size: 96px;
+    font-style: italic;
+    color: #F0F0F0;
+    width: 559px;
+
+}
+
+.hero__text {
+    font-size: 24px;
+    color: #cacaca;
+    width: 426px;
+    font-weight: 400;
+    margin-bottom: 28px;
+}
+.hero__btn {
+    background-color: #030915;
+    font-size: 28px;
+    color: #F3F4F6;
+    border-radius: 12px;
+    border: 3px solid #fcfcfc;
+    padding: 20px 28px;
+}
+.hero__img {
+    position: absolute;
+    top: 150px;
+    left: 260px;
+
+}

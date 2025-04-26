@@ -57,7 +57,7 @@ export function handleFaqAccordionClick(clickedElement) {
 
 export function createFaqBlock(data) {
   const wrap = $('<div>').addClass('faq__wrap');
-  const title = $('<h4>').addClass('review__title').text('Питання та відповіді');
+  const title = $('<h4>').addClass('faq__title').text('Питання та відповіді');
   wrap.append(title);
   let block = $('<div>').addClass('accordion__faq');
   wrap.append(block);

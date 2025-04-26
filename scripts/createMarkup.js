@@ -118,7 +118,7 @@ function createRadioButtons(key, title, types) {
 function createHeader(imgSrc, modelName) {
   let header = $('<div class="car-info"></div>');
   header.append(
-    '<img src="' + imgSrc + '" alt="Фото машини" class="head-img" />',
+    '<img src="' + imgSrc + '" alt="Фото машини" class="model-photo" />',
   );
 
   let modelSummary = $('<div class="model-summary"></div>');

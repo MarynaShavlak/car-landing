@@ -57,7 +57,7 @@ $(document).ready(function () {
     }
 
     const imgPath = clickedColor.attr('data-img-path');
-    $('.head-img').attr('src', imgPath);
+    $('.model-photo').attr('src', imgPath);
     resetOtherColors(clickedColor);
     toggleActiveColorClass(clickedColor);
   }
